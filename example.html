@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="renderer" content="webkit">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title></title>
+    <link rel="stylesheet" href="dist/power-caret.css"/>
+    <style>
+        body{
+            background: #333;
+            margin: 50px;
+        }
+        #test1{
+            width: 600px;
+            height: 300px;
+            padding: 10px;
+            font-size: 40px;
+            font-family: "Courier New";
+            background: #000;
+            text-shadow: 0 0 0 #fff;
+            border: solid 2px #7Af;
+        }
+
+        #test2{
+            width: 300px;
+            padding: 6px;
+            font-family: "Courier New";
+            background: #fff;
+            text-shadow: 0 0 0 #000;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <textarea id="test1" class="test"></textarea>
+    </div>
+    <div style="margin-top: 30px;">
+        <input id="test2" class="test">
+    </div>    
+</body>
+<script type="text/javascript" src="dep/jquery-2.1.4.min.js"></script>
+<script type="text/javascript" src="dep/caret-coordinates.js"></script>
+<script type="text/javascript" src="dep/sketch.min.js"></script>
+<script type="text/javascript" src="dist/particles.js"></script>
+<script type="text/javascript" src="dist/power-caret.js"></script>
+<script type="text/javascript">
+$(function(){
+    var canvas = createCanvas(); // canvas for particle 
+    
+    $(".test").powerCaret({
+        onCaretMove: function(e, x, y){
+            if(e.type != "input") return;
+
+            // generate particle while typing
+            for ( i = 0; i < random( 3, 7 ); i++ ) 
+            {
+                canvas.spawnParticle(x, y);
+            }
+        }
+    });
+});
+</script>
+</html>

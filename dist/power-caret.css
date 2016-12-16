@@ -1,0 +1,68 @@
+.edit-wrapper{
+    display: inline-block;
+    overflow: hidden;
+    position: relative;
+}
+
+.edit-wrapper textarea, .edit-wrapper input{
+    display: block;
+}  
+
+.edit-ctrl{
+    color: transparent;
+    text-shadow: 0 0 0 #fff;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+}
+
+.power-caret{
+    position: absolute;
+    left: -999px;
+    top: -999px;
+    background: #F93;
+    width: 3px;
+    height: 10px;
+}
+
+.power-caret.blink{
+    animation: blink 0.8s linear infinite; 
+}
+
+.power-caret.pop{
+    animation: pop 0.4s; 
+}
+
+@keyframes blink{
+    0% {
+        opacity: 1.0;
+    }
+
+    30% {
+        opacity: 0.1;
+    }
+
+    50% {
+        opacity: 1.0;
+    }
+
+    100% {
+        opacity: 1.0;
+    }
+}
+@keyframes pop{
+    0% {
+        transform: scale(1.0, 1.0);
+        opacity: 1.0;
+    }
+
+    75% {
+        transform: scale(2.0, 1.2);
+        opacity: 1.0;
+    }
+
+    100% {
+        transform: scale(1.0, 1.0);
+        opacity: 1.0;
+    }
+}
