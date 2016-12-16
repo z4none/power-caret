@@ -6,6 +6,8 @@ styled HTML text input caret
 
 inspired by [activate-power-mode](https://github.com/JoelBesada/activate-power-mode)
 
+[Live demo](http://z4none.coding.me/power-caret/example.html)
+
 files
 
  * dist/particles.js / 粒子效果 / fireworks particle effect
